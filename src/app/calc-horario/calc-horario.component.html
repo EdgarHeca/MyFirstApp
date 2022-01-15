@@ -1,1 +1,141 @@
-<p>calc-horario works!</p>
+<div class="horario-container">
+    <div class="pagos-container">
+        <h2>Pago por hora</h2>
+        <div class="pagos-grid">
+            <p>Mesera:</p>
+            <input type="number"  name="pagoCajera" id="pagoCajera" #pagoCajera min="0" max="99999" step="0.1" value="6">
+
+            <p>Cajera:</p>
+            <input type="number" name="pagoMesera" id="pagoMesera" #pagoMesera min="0" max="99999" step="0.1" value="10">
+        </div>
+
+    </div>
+    <div class="horario-grid">
+        <p>Cargo</p>
+        <p>Día</p>
+        <p>Hora de entrada:</p>
+        <p>Hora de salida:</p>
+        <p>Horas trabajadas:</p>
+        <p>Pago:</p>
+
+        <div class="radio-btn">
+            <label for="tipoPago1">Mesera</label>
+            <input type="radio" name="radioPago1" id="tipoPago1" value="mesera" checked>
+
+            <label for="tipoPago2">Cajera</label>
+            <input type="radio" name="radioPago1" id="tipoPago2" value="cajera" #radioPago1>
+        </div>
+        <p>Lunes</p>
+        <input type="time" id="horaEntLun" #horaEntLun name="horaEntLun">
+        <input type="time" id="horaSalLun" #horaSalLun name="horaSalLun">
+        <p>{{ horaTemp[0] }}</p>
+        <p>{{ pagoPorDia[0] }}</p>
+
+        <div class="radio-btn">
+            <label for="tipoPago1">Mesera</label>
+            <input type="radio" name="radioPago2" id="tipoPago1" value="mesera" checked #radioPago2> 
+
+            <label for="tipoPago2">Cajera</label>
+            <input type="radio" name="radioPago2" id="tipoPago2" value="cajera" #radioPago2>
+        </div>
+        <p>Martes</p>
+        <input type="time" id="horaEntMar" #horaEntMar name="horaEntMar">
+        <input type="time" id="horaSalMar" #horaSalMar name="horaSalMar">
+        <p>{{ horaTemp[1] }}</p>
+        <p>{{ pagoPorDia[1] }}</p>
+
+        <div class="radio-btn">
+            <label for="tipoPago1">Mesera</label>
+            <input type="radio" name="radioPago3" id="tipoPago1" value="mesera" checked #radioPago3>
+
+            <label for="tipoPago2">Cajera</label>
+            <input type="radio" name="radioPago3" id="tipoPago2" value="cajera" #radioPago3>
+        </div>
+        <p>Miércoles</p>
+        <input type="time" id="horaEntMie" #horaEntMie name="horaEntMie">
+        <input type="time" id="horaSalMie" #horaSalMie name="horaSalMie">
+        <p>{{ horaTemp[2] }}</p>
+        <p>{{ pagoPorDia[2] }}</p>
+
+        <div class="radio-btn">
+            <label for="tipoPago1">Mesera</label>
+            <input type="radio" name="radioPago4" id="tipoPago1" value="mesera" checked #radioPago4>
+
+            <label for="tipoPago2">Cajera</label>
+            <input type="radio" name="radioPago4" id="tipoPago2" value="cajera" #radioPago4>
+        </div>
+        <p>Jueves</p>
+        <input type="time" id="horaEntJue" #horaEntJue name="horaEntJue">
+        <input type="time" id="horaSalJue" #horaSalJue name="horaSalJue">
+        <p>{{ horaTemp[3] }}</p>
+        <p>{{ pagoPorDia[3] }}</p>
+
+        <div class="radio-btn">
+            <label for="tipoPago1">Mesera</label>
+            <input type="radio" name="radioPago5" id="tipoPago1" value="mesera" checked #radioPago5>
+
+            <label for="tipoPago2">Cajera</label>
+            <input type="radio" name="radioPago5" id="tipoPago2" value="cajera" #radioPago5>
+        </div>
+        <p>Viernes</p>
+        <input type="time" id="horaEntVie" #horaEntVie name="horaEntVie">
+        <input type="time" id="horaSalVie" #horaSalVie name="horaSalVie">
+        <p>{{ horaTemp[4] }}</p>
+        <p>{{ pagoPorDia[4] }}</p>
+
+        <div class="radio-btn">
+            <label for="tipoPago1">Mesera</label>
+            <input type="radio" name="radioPago6" id="tipoPago1" value="mesera" checked #radioPago6>
+
+            <label for="tipoPago2">Cajera</label>
+            <input type="radio" name="radioPago6" id="tipoPago2" value="cajera" #radioPago6>
+        </div>
+        <p>Sábado</p>
+        <input type="time" id="horaEntSab" #horaEntSab name="horaEntSab">
+        <input type="time" id="horaSalSab" #horaSalSab name="horaSalSab">
+        <p>{{ horaTemp[5] }}</p>
+        <p>{{ pagoPorDia[5] }}</p>
+
+        <div class="radio-btn">
+            <label for="tipoPago1">Mesera</label>
+            <input type="radio" name="radioPago7" id="tipoPago1" value="mesera" checked #radioPago7>
+
+            <label for="tipoPago2">Cajera</label>
+            <input type="radio" name="radioPago7" id="tipoPago2" value="cajera" #radioPago7>
+        </div>
+        <p>Domingo</p>
+        <input type="time" id="horaEntDom" #horaEntDom name="horaEntDom">
+        <input type="time" id="horaSalDom" #horaSalDom name="horaSalDom">
+        <p>{{ horaTemp[6] }}</p>
+        <p>{{ pagoPorDia[6] }}</p>
+
+    </div>
+    <div class="button-holder">
+        <button (click)="
+        getValue(horaEntLun.value,
+        horaEntMar.value,
+        horaEntMie.value,
+        horaEntJue.value,
+        horaEntVie.value,
+        horaEntSab.value,
+        horaEntDom.value,
+        horaSalLun.value,
+        horaSalMar.value,
+        horaSalMie.value,
+        horaSalJue.value,
+        horaSalVie.value,
+        horaSalSab.value,
+        horaSalDom.value,
+        pagoCajera.value,
+        pagoMesera.value,
+        radioPago1.value,
+        radioPago2.value,
+        radioPago3.value,
+        radioPago4.value,
+        radioPago5.value,
+        radioPago6.value,
+        radioPago7.value
+        )
+        " class="button-enter">Calcular</button>
+    </div>
+</div>
