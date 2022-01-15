@@ -3,10 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CalcHorarioComponent } from './calc-horario/calc-horario.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CalcHorarioComponent
   ],
   imports: [
     BrowserModule,
