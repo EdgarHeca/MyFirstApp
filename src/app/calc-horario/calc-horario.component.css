@@ -1,14 +1,96 @@
-.horario-container{
-    width: 75vw;
-    margin: 8vh auto auto auto;
+.unselectable{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
-.horario-grid{
-    display: grid;
-    grid-template-rows: repeat(8, 3rem);
-    grid-template-columns: repeat(6, 1fr);
+.material-icons, .material-icons-outlined{
+    display: inline-flex;
+    vertical-align:bottom;
+}
+
+.pagos-container{
+    margin: 0 auto 0 auto;
     text-align: center;
-    background-color: gray;
+    width: 85vw;
+}
+
+.pagos-container h1{
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--font-color-table-heading);
+}
+
+.pagos-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 15%);
+    justify-content: center;
+    margin: 0 auto 0 auto;
+    padding: 1.5vh 0 1.5vh 0;
+    background-color: var(--background-table);
+    border-radius: 20px;
+}
+
+.pagos-grid span{
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--font-color-table-heading);
+    grid-column: 1 / 3;
+    padding: 0 0 .8rem 0;
+}
+
+.pagos-grid .error-string{
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: red;
+    padding: 0 0 .8rem 0;
+}
+
+.pagos-grid p{
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: var(--font-color-table-heading);
+}
+
+.tabla-horario{
+    margin: 2vh auto 0 auto;
+    padding: 1.5vw 0 0 0;
+    width: 85vw;
+    border-radius: 20px;
+    background: var(--background-table);
+}
+
+table th{
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--font-color-table-heading);
+}
+
+table td{
+    font-weight: 400;
+    font-size: 1.1rem;
+    text-align: center;
+    color: var(--font-color-table-text);
+}
+
+label{
+    padding: .2rem 1rem .2rem 1rem;
+    cursor: pointer;
+    background: var(--cargo-noselected);
+    border-radius: 20px;
+    color: var(--font-color-noselected);
+}
+
+input[type=radio]{
+    visibility: hidden;
+}
+
+input[type=radio]:checked+label{
+    background: var(--cargo-selected);
+    color: var(--font-color-selected);
 }
 
 .button-holder{
@@ -17,26 +99,25 @@
 }
 
 .button-enter{
-    padding: .2rem 1rem;
-    font-size: 1rem;
-}
-
-.pagos-container{
-    margin: auto;
-    text-align: center;
-}
-
-.pagos-grid{
-    display: grid;
-    grid-template-columns: repeat(2, 15%);
-    justify-content: center;
-    margin: 0 auto 0 auto;
-    padding: 0 0 3vh;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 20px;
+    border: none;
+    background-color: var(--cargo-selected);
+    color: var(--font-color-selected);
+    padding: .4rem 3rem;
+    font-size: 1.4rem;
+    transition: .3s;
 }
 
 input[type=number]{
-    width: 40%;
+    width: 60%;
+    height: 1.8rem;
+    align-self: center;
     padding: 0 0 0 1rem;
+    font-size: 1.05rem;
+    font-weight: 300;
+    color: var(--font-color-table-heading);
 }
 
 input[type=time]{
@@ -45,10 +126,66 @@ input[type=time]{
     width: min-content;
 }
 
-input[type=radio]{
-    margin: 0 2rem 0 .3rem ;
+.slider-indicator{
+    display: none;
 }
 
-.radio-btn{
-    align-self: center;
+.totales{
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+
+@media (hover: hover){
+    .button-enter:hover{
+        background-color: var(--button-hover);
+        color: var(--background-table);
+    }
+}
+
+@media (max-width: 960px){
+    .pagos-container{
+        width: 95vw;
+    }
+
+    .pagos-grid{
+        grid-template-columns: repeat(2, 40%);
+    }
+
+    input[type=number]{
+        height: 2rem;
+        width: 50%;
+    }
+
+    th:nth-child(+n+3){
+        padding: 1.2rem;
+    }
+
+    td:nth-child(+n+3){
+        padding: 1.2rem;
+    }
+
+    label{
+        line-height: 3rem;
+    }
+
+    .slider-indicator{
+        display: block;
+        color: var(--button-hover);
+        margin: 1rem 0 0 0;
+        animation-duration: 2s;
+        animation-name: slider;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes slider{
+        from{
+            opacity: 0;
+            margin-left: 50%;
+        }
+        to{
+            opacity: 1;
+            margin-left: 100%;
+        }
+    }
 }

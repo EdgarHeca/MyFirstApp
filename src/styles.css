@@ -1,9 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+:root{
+    --background-color: #6C9B7C;
+    --background-table: #F2FCF5;
+    --font-color-table-heading: #1D1D35;
+    --font-color-table-text: #1D1D35;
+    --cargo-noselected: #718b79;
+    --font-color-noselected: #5c5c5f;
+    --cargo-selected: #42BE7A;
+    --font-color-selected: #1D1D35;
+    --button-hover: #094926;
+}
+
 html, body{
     margin: 0;
     padding: 0;
+    font-family: 'Lato', sans-serif;
 }
 
 html {
-    background: rgb(63, 62, 62);
+    background: var(--background-color);
 }
